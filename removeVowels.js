@@ -5,12 +5,10 @@
 var str = "supercalifragilisticexpialidocious";
 
 function remVowels(str) {
-    var vowels = [a,e,i,o,u];
-    str.split('');
-    str.forEach(function() {
-
-    });
+    return str.replace(/[aeiouAEIOU]/g, '');
 }
+
+console.log(remVowels(str));
 
 
 
@@ -63,15 +61,15 @@ console.log(cleanUp("La Dia Es Bonita"));
 // Jason's solution
 
 function removeVowels(str){
- var vowels = ["a", "e", "i", "o", "u"];
- var newStr = str.split("");
- for (var i = newStr.length - 2; i > 0; i--){
-   if(vowels.indexOf(newStr[i]) !== -1){
-     newStr.splice(i, 1);
-   }
- }
- var solution = newStr.join("");
- return solution;
+  var vowels = ["a", "e", "i", "o", "u"];
+  var newStr = str.split("");
+  for (var i = newStr.length - 2; i > 0; i--){
+    if(vowels.indexOf(newStr[i]) !== -1){
+      newStr.splice(i, 1);
+    }
+  }
+  var solution = newStr.join("");
+  return solution;
 }
 
 console.log(removeVowels("hello"));

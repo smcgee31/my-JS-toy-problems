@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/dnaPairing.js"
+      "program": "${workspaceFolder}/removeVowels.js"
     }
   ]
 }
