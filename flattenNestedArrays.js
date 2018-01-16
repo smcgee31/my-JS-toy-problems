@@ -7,9 +7,8 @@ var arr = [1, [2, 3, [4], [5, 6, 7]], 8];
 
 // Solution #1
 function flatten(arr) {
-  var newArr;
   if (Array.isArray(arr)) {
-    return (newArr = []).concat.apply(newArr, arr.map(flatten));
+    return [].concat(...arr.map(flatten));
   }
   return arr;
 }
@@ -17,3 +16,9 @@ function flatten(arr) {
 
 // Solution #2
 const flatten2 = (arr) => Array.isArray(arr) ? [].concat(...arr.map(flatten2)) : arr ;
+
+
+console.log( flatten([[["a"]], [["b"]]]) );   // should return ["a", "b"]
+console.log( flatten([1, [2], [3, [[4]]]]) );  // should return [1, 2, 3, 4]
+console.log( flatten([1, [], [3, [[4]]]]) );      // should return [1, 3, 4]
+console.log( flatten([1, {}, [3, [[4]]]]) );   // should return [1, {}, 3, 4]
